@@ -1,0 +1,13 @@
+.home{
+    min-height: 75vh;
+    background-color: rgb(160, 160, 160);
+    padding-top: 5vh;
+}
+
+.text{
+    background-color: whitesmoke;
+    align-self: center;
+    width: 40%;
+    margin: auto;
+    height: 30vh;
+}
