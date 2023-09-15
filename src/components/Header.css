@@ -1,4 +1,8 @@
 .header{
-    min-height: 10vh;
-    background-color: aqua;
+    background-color: rgb(48, 0, 92);
+    color: whitesmoke;
+    /* min-height: 10vh; */
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    font-size: large;
 }

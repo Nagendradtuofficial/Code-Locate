@@ -35,17 +35,23 @@ const Home = () => {
       settext(data)
     };
   
-    const decryptData = async () => {
-      const bytes = CryptoJS.AES.decrypt(text, secretPass);
-      const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    //   setDecrptedData(data);
-    //   await delay (1000);
-        const latitude= data.substring(0,10);
-        const longitude = data.substring(10,20);
-        // console.log('reroute');
-        console.log('reroute'+latitude);
-        console.log(longitude);
-        window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
+    const decryptData = async () => 
+    {
+      if(text === "")
+        alert("Enter a Valid Code")
+      else
+      {
+        const bytes = CryptoJS.AES.decrypt(text, secretPass);
+        const data = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+      //   setDecrptedData(data);
+      //   await delay (1000);
+          const latitude= data.substring(0,10);
+          const longitude = data.substring(10,20);
+          // console.log('reroute');
+          console.log('reroute'+latitude);
+          console.log(longitude);
+          window.open(`https://maps.google.com/?q=${latitude},${longitude}`);
+      }
     };
 
     const handleLocationClick = () => 
@@ -72,7 +78,7 @@ const Home = () => {
   return (
     <div className='home'>
         <div className='text'>
-        <TextField sx={{ width: '40%', "& fieldset": { border: 'none' },borderRadius: '15px', backgroundColor: 'whitesmoke',boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' , marginBottom: '20px'}} rows={8} multiline
+        <TextField sx={{ width: '40%', "& fieldset": { border: 'none' },borderRadius: '15px', backgroundColor: '#bd94ff',boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' , marginBottom: '20px'}} rows={8} multiline
         value = {text}
         onChange={(e) => {
             settext(e.target.value);
@@ -81,8 +87,8 @@ const Home = () => {
         />
         </div>
 
-        <div><Button sx={{backgroundColor: '#0471c4' , color: 'white' , marginTop: '2vh' }} className='get-code'  onClick={handleLocationClick}> Get Code </Button></div>
-        <div><Button sx={{backgroundColor: '#0471c4' , color: 'white', marginTop: '2vh'}} className='get-location' onClick={decryptData}> Get Location </Button></div>
+        <div><Button sx={{backgroundColor:  'white', color: '#0471c4' , fontWeight: 600 , marginTop: '2vh' }} className='get-code'  onClick={handleLocationClick}> Get Code </Button></div>
+        <div><Button sx={{backgroundColor: 'white' , color: '#0471c4', fontWeight: 600 ,marginTop: '2vh'}} className='get-location' onClick={decryptData}> Get Location </Button></div>
     </div>
   )
 }

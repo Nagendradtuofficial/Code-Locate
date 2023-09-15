@@ -1,4 +1,8 @@
 .footer{
-    min-height: 10vh;
-    background-color: aqua
+    background-color: rgb(48, 0, 92);
+    color: whitesmoke;
+    /* min-height: 10vh; */
+    padding-top: 3.5vh;
+    padding-bottom: 3.5vh;
+    font-size: large;
 }
