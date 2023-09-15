@@ -78,7 +78,7 @@ const Home = () => {
   return (
     <div className='home'>
         <div className='text'>
-        <TextField sx={{ width: '40%', "& fieldset": { border: 'none' },borderRadius: '15px', backgroundColor: '#bd94ff',boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' , marginBottom: '20px'}} rows={8} multiline
+        <TextField sx={{ width: '40%', minWidth: '300px', "& fieldset": { border: 'none' },borderRadius: '15px', backgroundColor: '#bd94ff',boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)' , marginBottom: '20px'}} rows={8} multiline
         value = {text}
         onChange={(e) => {
             settext(e.target.value);
